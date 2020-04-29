@@ -1,4 +1,163 @@
 :root
 {
-	background:linear-gradient(to right, white,lightgray);
+	--lightbackground:#DEE4E7;
+	--darkbackground:#37474F;
+	--buttoncolor:white;
+	--textcolor:gray;
+	background-color: var(--lightbackground);
+	
 }
+
+*
+{
+	box-sizing: border-box;
+	/*color: var(--textcolor);*/
+}
+
+.button
+{
+	background-color:var(--buttoncolor);
+}
+
+footer
+{
+	z-index: 100;
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-style: italic;
+	color:var(--darkbackground);
+}
+footer > a
+{
+	text-decoration: none;
+	color: var(--darkbackground);
+}
+
+.image
+{
+	display: none;
+}
+
+
+/*Navbar*/
+.menu
+{
+
+
+	display: grid;
+	grid-template-columns: 4fr 1fr;
+	grid-template-rows: 1fr;
+	grid-gap: 2rem;
+}
+
+
+/*Underlined list*/
+.items
+{
+ 
+  padding: 0 0;
+  margin: 0 0;
+  padding: 0.5rem;
+
+}
+
+
+/*List items*/
+.item
+{
+	display: inline;
+	list-style: none;
+	background-color: white;
+	text-align: center;
+	margin-right: 0.25rem;
+}
+
+.item > a
+{
+	text-decoration: none;
+	color: var(--darkbackground);
+	cursor: pointer;
+}
+
+/*Login button*/
+.login,.item
+{
+ 
+  transition: all 0.5s ease;
+  border-radius: 20px 20px 20px 20px;
+  padding: 0.5rem;
+  border:none;
+
+}
+
+.login
+{
+	max-width: 150px;
+}
+
+
+/*Hovering effects*/
+.login:hover,.item:hover
+{
+	background-color: gray;
+	transform: scale(0.99);
+	color: white;
+	cursor: pointer;
+}
+
+
+@media all and (max-width:800px)
+{
+
+
+}
+
+@media all and (max-width:500px)
+{
+
+.menu
+{
+
+
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	grid-template-rows: 0.5fr;
+	grid-gap: 1rem;
+}
+
+
+.image
+{
+	display: inline-block;
+	width: 40px;
+}
+
+.image img
+{
+
+width: 100%;
+}
+
+.items
+{
+	display: none;
+}
+
+.mobile
+{
+	position: absolute;
+	top:10%;
+	left:0%;
+	display: grid;
+	grid-gap: 0.25rem;
+	background-color: orange;
+	transition: all 1s ease;
+}
+
+
+
+}
+
+
