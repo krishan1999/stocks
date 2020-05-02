@@ -53,7 +53,8 @@ let ul= document.getElementsByClassName("items")[0];
 image.onclick = (e) => 
 {
 	ul.classList.toggle("mobile");
-}
+    //document.getElementsByTagName("body")[0].style.background=""
+} 
 
 button.onclick = (e) => 
 {

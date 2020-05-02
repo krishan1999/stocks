@@ -89,31 +89,74 @@ footer > a
   border-radius: 20px 20px 20px 20px;
   padding: 0.5rem;
   border:none;
+  box-shadow: 5px 5px 10px black;
 
 }
 
 .login
 {
 	max-width: 150px;
+	box-shadow: 5px 5px 10px black;
 }
 
 
 /*Hovering effects*/
 .login:hover,.item:hover
 {
-	background-color: gray;
-	transform: scale(0.99);
+	background-color: pink;
+	transform: scale(0.97);
 	color: white;
 	cursor: pointer;
 }
 
+.submenu
+{
+	display: none;
+	/*display: none;*/
+	position: absolute;
+	top: 6%;
+	left: 0%;
+	list-style-type: none;
 
-@media all and (max-width:800px)
+	/*display: flex;
+	flex-flow: column;*/
+}
+
+.submenu-item
+{
+	margin-top: 0.35rem;
+	color: black;
+	border:none;
+	box-shadow: 5px 5px 10px black;
+	padding: 0.25rem 1rem;
+	border-radius: 10px 10px 10px 10px;
+    transition: all 0.5s ease;
+    background: white;
+  
+}
+
+.submenu-item:hover
+{
+	color: white;
+	background: pink;
+	transform: translate(10%,0) ;
+}
+
+.i1:hover > .submenu
+{
+ display: block;
+}
+
+.i1
+{
+	transition: all 0.5s ease;
+}
+/*@media all and (max-width:800px)
 {
 
 
 }
-
+*/
 @media all and (max-width:500px)
 {
 
@@ -142,22 +185,34 @@ width: 100%;
 
 .items
 {
-	display: none;
+    display: block;
+    position: absolute;
+	top:10%;   
+	left:-100%;
+	transition: all 0.75s ease;
+	 display: grid;
+     grid-template-columns: 1fr;
+     grid-gap: 0.75rem;
 }
 
+.submenu
+{
+    position: absolute;
+	top: 0%;
+	left: 60%;
+     
+}
+
+.submenu-item
+{
+	border-radius: 60%;
+	padding: 0.25rem 1rem;
+}
 .mobile
 {
-	position: absolute;
-	top:10%;
-	left:0%;
-	display: grid;
-	grid-gap: 0.25rem;
-	background-color: orange;
-	transition: all 1s ease;
+	left:50%;
+	transform: translate(-50%,0);
+	
 }
 
-
-
 }
-
-
