@@ -66,7 +66,7 @@ button.onclick = (e) =>
 let stock= document.querySelector(".stock");
 let enter= document.querySelector(".enter");
 let output= document.querySelector(".output");
-let childs= document.getElementsByClassName("output")[0].children;
+
 
 const insert= (val) =>{
 
@@ -97,7 +97,7 @@ const del= (e)=>
 function repeated(val)
 {
 	let ans=0;
-   let childArr=Array.from(childs);
+   let childArr=Array.from(output.children);
     childArr.forEach((val2)=> 
     	{
         let text= val2.textContent.substring(0,val2.textContent.length-1);	
@@ -115,13 +115,19 @@ else
 
 }
 
+let isEmpty = (val) => val=="";
 
 
 enter.onclick= (e) =>
 {
 let val=stock.value;
 
-	if(repeated(val))
+
+    if(isEmpty(val))
+    {
+       alert("The field is empty");
+    }
+	else if(repeated(val))
 	{
 		alert(`${val.toUpperCase()} is already in the list`);
 	      stock.value="";     
@@ -136,9 +142,26 @@ let val=stock.value;
 
 stock.onkeyup= (e)=>
 {
-	if(e.which==13){
+	let val=e.target.value;
+	
+    if(e.which==13){
+
+		
+    if(isEmpty(val))
+    {
+       alert("The field is empty");
+    }
+	else if(repeated(val))
+	{
+		alert(`${val.toUpperCase()} is already in the list`);
+	      e.target.value="";   
+	}
+	else
+	{
 		insert(e.target.value);
 		e.target.value="";
+	}
+		
 	}
 }
 
