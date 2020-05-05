@@ -67,8 +67,6 @@ let stock= document.querySelector(".stock");
 let enter= document.querySelector(".enter");
 let output= document.querySelector(".output");
 
-
-
 const insert= (val) =>{
 
 	let element= document.createElement("li");
@@ -82,16 +80,35 @@ const insert= (val) =>{
 	output.appendChild(element);
 }
 
+const del= (e)=>
+{
+		if(e.target.classList.contains("cancel"))
+	{
+		let item= e.target.parentElement;
+        output.removeChild(item);
+
+	}
+
+}
 
 enter.onclick= (e) =>
 {
 insert(stock.value);
+stock.value="";
 }
 
 stock.onkeyup= (e)=>
 {
 	if(e.which==13){
 		insert(e.target.value);
+		e.target.value="";
 	}
 }
 
+output.onclick = (e) =>
+{  
+if(confirm("Please confirm the deletion"))
+{
+ del(e);
+}
+}
