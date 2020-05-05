@@ -66,6 +66,7 @@ button.onclick = (e) =>
 let stock= document.querySelector(".stock");
 let enter= document.querySelector(".enter");
 let output= document.querySelector(".output");
+let childs= document.getElementsByClassName("output")[0].children;
 
 const insert= (val) =>{
 
@@ -82,19 +83,55 @@ const insert= (val) =>{
 
 const del= (e)=>
 {
-		if(e.target.classList.contains("cancel"))
+
+	if(e.target.classList.contains("cancel"))
 	{
+			if(confirm("Please confirm the deletion"))
+      {
 		let item= e.target.parentElement;
         output.removeChild(item);
-
+      }
 	}
+}
+
+function repeated(val)
+{
+	let ans=0;
+   let childArr=Array.from(childs);
+    childArr.forEach((val2)=> 
+    	{
+        let text= val2.textContent.substring(0,val2.textContent.length-1);	
+    	 if(text==val)
+    	 {
+    	 	ans=1;
+    	 }
+        }); 
+    
+
+if(ans==0)
+    return false;
+else
+	return true;
 
 }
 
+
+
 enter.onclick= (e) =>
 {
-insert(stock.value);
-stock.value="";
+let val=stock.value;
+
+	if(repeated(val))
+	{
+		alert(`${val.toUpperCase()} is already in the list`);
+	      stock.value="";     
+	}
+	else
+	{
+		insert(val);
+        stock.value="";
+	}
+
 }
 
 stock.onkeyup= (e)=>
@@ -107,8 +144,7 @@ stock.onkeyup= (e)=>
 
 output.onclick = (e) =>
 {  
-if(confirm("Please confirm the deletion"))
-{
+
  del(e);
-}
+
 }
