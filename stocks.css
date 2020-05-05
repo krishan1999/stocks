@@ -1,3 +1,6 @@
+
+@import "main.css";
+
 :root
 {
 	--lightbackground:#DEE4E7;
@@ -103,7 +106,7 @@ footer > a
 /*Hovering effects*/
 .login:hover,.item:hover
 {
-	background-color: pink;
+	background-color: blue;
 	transform: scale(0.97);
 	color: white;
 	cursor: pointer;
@@ -138,7 +141,7 @@ footer > a
 .submenu-item:hover
 {
 	color: white;
-	background: pink;
+	background: blue;
 	transform: translate(10%,0) ;
 }
 
@@ -210,7 +213,7 @@ width: 100%;
 }
 .mobile
 {
-	left:50%;
+	left:20%;
 	transform: translate(-50%,0);
 	
 }

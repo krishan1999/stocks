@@ -1,0 +1,94 @@
+:root
+{
+	--containercolor:#404b85;
+
+}
+
+.main
+{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	/*grid-template-columns: 1fr;*/
+	flex-flow: column;
+}
+
+.container
+{
+	
+	display: grid;
+	grid-template-columns: auto 2fr 1fr;
+	border-bottom: 2px solid var(--containercolor);
+	color: var(--containercolor);
+	background-color: lightgray;
+	padding: 0.5rem;
+
+}
+
+
+
+.container > label, .stock
+{
+	padding: 0.5rem;
+}
+
+.stock
+{
+	border:none;
+	background-color: transparent;
+    color: var(--containercolor);
+    text-transform: uppercase;
+   } 
+
+.stock:focus
+{
+	outline: none;
+	
+}
+
+.enter
+{
+	color: var(--containercolor);
+	padding: 0.5rem;
+	border:none;
+	transition: all 0.5s;
+}
+
+.enter:hover
+{
+  background: lightblue;
+  transform: scale(0.98);
+
+}
+
+.output
+{
+	list-style-type: none;
+	padding: 0;
+	background-color: lightgray;
+	color: var(--containercolor);
+	text-transform: uppercase;
+
+}
+
+.output-item
+{
+padding: 0.5rem;	
+}
+
+.cancel
+{
+	padding: 0.25rem;
+	background: white;
+	border:none;
+	float: right;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.cancel:hover
+{
+	background: red;
+}

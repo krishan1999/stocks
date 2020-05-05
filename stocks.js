@@ -13,7 +13,7 @@ let val2= new Date(2020,3,27);
 
 let dif= val2.getTime()- val.getTime();
 let diff =dif/1000/60/60/24;
-console.log(`Difference Hours: ${diff}`);
+console.log(`Difference ,cdHours: ${diff}`);
 console.log(val.toJSON());
 console.log(val.toLocaleString());
 
@@ -59,5 +59,39 @@ image.onclick = (e) =>
 button.onclick = (e) => 
 {
 
+}
+
+
+//part 2
+let stock= document.querySelector(".stock");
+let enter= document.querySelector(".enter");
+let output= document.querySelector(".output");
+
+
+
+const insert= (val) =>{
+
+	let element= document.createElement("li");
+	element.classList.add("output-item");
+	let text= document.createTextNode(`${val}`);
+    let button= document.createElement("button");
+    button.classList.add("cancel");
+    button.appendChild(document.createTextNode("X"));
+	element.appendChild(text);
+	element.appendChild(button);
+	output.appendChild(element);
+}
+
+
+enter.onclick= (e) =>
+{
+insert(stock.value);
+}
+
+stock.onkeyup= (e)=>
+{
+	if(e.which==13){
+		insert(e.target.value);
+	}
 }
 
