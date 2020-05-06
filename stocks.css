@@ -24,13 +24,14 @@
 
 footer
 {
-	z-index: 100;
-	position: absolute;
+	position: fixed;
 	bottom: 5%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	font-style: italic;
 	color:var(--darkbackground);
+	opacity: 0.65;
+	margin-top: 1rem;
 }
 footer > a
 {
@@ -63,7 +64,6 @@ footer > a
   padding: 0 0;
   margin: 0 0;
   padding: 0.5rem;
-  z-index: 101;
 
 }
 
@@ -116,14 +116,10 @@ footer > a
 .submenu
 {
 	display: none;
-	/*display: none;*/
 	position: absolute;
 	top: 6%;
 	left: 0%;
 	list-style-type: none;
-
-	/*display: flex;
-	flex-flow: column;*/
 }
 
 .submenu-item
@@ -220,3 +216,19 @@ width: 100%;
 }
 
 }
+
+/*.main
+{
+	position:absolute;
+	top: 37%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: grid;
+	grid-template-columns: 1fr;
+   height: auto;
+}
+
+.output
+{
+	height: auto;
+}*/

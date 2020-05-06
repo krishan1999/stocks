@@ -7,11 +7,10 @@
 .main
 {
 	position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+	top: 25%;
+	left: 40%;
+	/*transform: translate(-50%,-50%);*/
 	display: flex;
-	/*grid-template-columns: 1fr;*/
 	flex-flow: column;
 	height: auto;
 }
@@ -71,6 +70,8 @@
 	background-color: lightgray;
 	color: var(--containercolor);
 	text-transform: uppercase;
+	height: 200px;
+	overflow: auto;
 
 }
 

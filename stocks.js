@@ -125,7 +125,7 @@ let val=stock.value;
 
     if(isEmpty(val))
     {
-       alert("The field is empty");
+       alert("Please enter the stock:");
     }
 	else if(repeated(val))
 	{
